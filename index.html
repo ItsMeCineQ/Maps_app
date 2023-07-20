@@ -13,36 +13,64 @@
             <span>maps</span>
         </div>
 
-        <div class="form_rows">
-            <div class="form_activity">
-                <div class="form_row"><label class="activity_label">Type</label>
-                    <select class="input_select">
-                        <option value="running">Running</option>
-                        <option value="cycling">Cycling</option>
-                    </select>
+        <form class="workout">
+            <div class="form_rows hidden">
+                <div class="form_activity">
+                    <div class="form_row"><label class="activity_label">Type</label>
+                        <select class="input_select">
+                            <option value="running">Running</option>
+                            <option value="cycling">Cycling</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form_row">
+                        <label class="distance">Distance</label>
+                        <input type="text" class="input_text" placeholder="km">
+                    </div>
+        
+                    <div class="form_row">
+                        <label class="duration">Duration</label>
+                        <input type="text" class="input_text" placeholder="min">
+                    </div>
+        
+                    <div class="form_row">
+                        <label class="cadence">Cadence</label>
+                        <input type="text" class="input_text" placeholder="step/min">
+                    </div>
+        
                 </div>
-                
-                <div class="form_row">
-                    <label class="distance">Distance</label>
-                    <input type="text" class="input_text" placeholder="km">
-                </div>
-    
-                <div class="form_row">
-                    <label class="duration">Duration</label>
-                    <input type="text" class="input_text" placeholder="min">
-                </div>
-    
-                <div class="form_row">
-                    <label class="cadence">Cadence</label>
-                    <input type="text" class="input_text" placeholder="step/min">
-                </div>
-    
             </div>
-        </div>
+            <div class="workout_summary">
+                <h2 class="workout_title">Running on July 20th</h2>
+                <div class="workout_details">
+                    <span class="workout_icon"></span>
+                    <span class="workout_value">5</span>
+                    <span class="workout_unit">km</span>
+                </div>
+                <div class="workout_details">
+                    <span class="workout_icon"></span>
+                    <span class="workout_value">25</span>
+                    <span class="workout_unit">min</span>
+                </div>
+                <div class="workout_details">
+                    <span class="workout_icon"></span>
+                    <span class="workout_value">5</span>
+                    <span class="workout_unit">min/km</span>
+                </div>
+                <div class="workout_details">
+                    <span class="workout_icon"></span>
+                    <span class="workout_value">180</span>
+                    <span class="workout_unit">spm</span>
+                </div>
+            </div>
+        </form>
     </section>
 
     <section class="map">
-        
+        <div class="buttons">
+            <button class="map_plus">+</button>
+            <button class="map_minus">-</button>
+        </div>
     </section>
     <script src="main.js"></script>
 </body>

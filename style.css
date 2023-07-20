@@ -43,12 +43,12 @@ body{
     color: var(--color-light-2);;
 }
 
-.sidebar .form_rows{
+.sidebar .workout .form_rows{
     background-color: var(--color-dark-2);
     border-radius: 10px;
 }
 
-.sidebar .form_rows .form_activity{
+.sidebar .workout .form_rows .form_activity{
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 400px;
@@ -56,7 +56,7 @@ body{
     padding: 5px;
 }
 
-.sidebar .form_activity .form_row{
+.sidebar .workout .form_activity .form_row{
     display: grid;
     grid-template-columns: 1fr 1fr;
     font-size: 1.25rem;
@@ -64,13 +64,13 @@ body{
     padding: 10px;
 }
 
-.sidebar .form_activity .input_select{
+.sidebar .workout .form_activity .input_select{
     width: 75px;
     border-radius: 5px;
     border: none;
 }
 
-.sidebar .form_activity .input_text{
+.sidebar .workout .form_activity .input_text{
     width: 65px;
     padding-left: 8px;
     border-radius: 5px;
@@ -80,4 +80,23 @@ body{
 .map{
     width: 66vw;
     background-color: #42484d;
+    position: relative;
+}
+
+.map .buttons{
+    display: flex;
+    flex-direction: column;
+    width: 40px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    gap: 2px;
+}
+
+.map .buttons button{
+    height: 40px;
+    font-size: 1.7rem;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
 }
