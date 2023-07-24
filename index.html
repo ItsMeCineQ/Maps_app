@@ -17,8 +17,8 @@
             </div>
         </div>
 
-        <form class="workout">
-            <div class="form_rows hidden">
+        <div class="workout">
+            <div class="form hidden">
                 <div class="form_activity">
                     <div class="form_row"><label class="activity_label">Type</label>
                         <select class="input_select-type">
@@ -28,23 +28,23 @@
                     </div>
                     
                     <div class="form_row">
-                        <label class="input_distance">Distance</label>
-                        <input type="text" class="input_text" placeholder="km">
+                        <label>Distance</label>
+                        <input class="input_text input_distance" placeholder="km">
                     </div>
         
                     <div class="form_row">
                         <label class="input_duration">Duration</label>
-                        <input type="text" class="input_text" placeholder="min">
+                        <input class="input_text" placeholder="min">
                     </div>
         
                     <div class="form_row">
                         <label class="input_cadence">Cadence</label>
-                        <input type="text" class="input_text" placeholder="step/min">
+                        <input class="input_text" placeholder="step/min">
                     </div>
         
                 </div>
             </div>
-            <div class="workout_summary workout_running">
+            <div class="workout_summary workout_running hidden">
                 <h2 class="workout_title">Running on July 20th</h2>
                 <div class="workout_details">
                     <div class="workout_stats">
@@ -70,7 +70,7 @@
                 </div>
             </div>
 
-            <div class="workout_summary workout_cycling">
+            <div class="workout_summary workout_cycling hidden">
                 <h2 class="workout_title">Cycling on July 20th</h2>
                 <div class="workout_details">
                     <div class="workout_stats">
@@ -95,7 +95,7 @@
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
     </section>
 
     <section id="map"></section>

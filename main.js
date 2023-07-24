@@ -5,11 +5,13 @@ const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 
 const form = document.querySelector('.form');
 const containerWorkouts = document.querySelector('.workouts');
 const inputType = document.querySelector('.input_select-type');
-const inputDistance = document.querySelector('.input-distance');
-const inputTime = document.querySelector('.input-time');
-const inputCadence = document.querySelector('.input-cadence');
-const inputDuration = document.querySelector('.input-duration');
-const inputElevation = document.querySelector('.input-elevation');
+const inputDistance = document.querySelector('.input_distance');
+const inputTime = document.querySelector('.input_time');
+const inputCadence = document.querySelector('.input_cadence');
+const inputDuration = document.querySelector('.input_duration');
+const inputElevation = document.querySelector('.input_elevation');
+
+let mapEvent, map;
 
 // Geolocation API
 if(navigator.geolocation){
@@ -17,30 +19,42 @@ if(navigator.geolocation){
         function(position) {
             const {latitude} = position.coords;
             const {longitude} = position.coords;
+            const coords = [latitude, longitude];
             console.log(`https://www.google.com/maps/@${latitude},${longitude}`);
-            const map = L.map('map').setView([latitude, longitude], 13);
+            map = L.map('map').setView(coords, 13);
 
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
 
-            map.on('click', function(mapEvent){
-                console.log(mapEvent);
-                const {lat, lng} = mapEvent.latlng;
-                L.marker([lat, lng]).addTo(map)
-                    .bindPopup(L.popup({
-                        maxWidth: 250,
-                        minWidth: 100,
-                        autoClose: false,
-                        closeOnClick: false,
-                        className: 'running-popup',
-                    }))
-                    .setPopupContent('Workout')
-                    .openPopup();
+            // Handling clicks on map
+            map.on('click', function(mapE){
+                mapEvent = mapE;
+                form.classList.remove('hidden');
+                inputDistance.focus();
             });
-
         }, 
         function(){
             alert('Could not get your position');
         });
 };
+
+form.addEventListener('click', function(e){
+    //Dispaly marker
+    e.preventDefault();
+    console.log('form submitted');
+    console.log(mapEvent);
+    const {lat, lng} = mapEvent.latlng;
+    L.marker([lat, lng])
+        .addTo(map)
+        .bindPopup(L.popup({
+            maxWidth: 250,
+            minWidth: 100,
+            autoClose: false,
+            closeOnClick: false,
+            className: 'running-popup',
+        })
+    )
+    .setPopupContent('Workout')
+    .openPopup();
+});

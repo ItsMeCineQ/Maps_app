@@ -52,12 +52,13 @@ body{
     color: var(--color-light-1);;
 }
 
-.sidebar .workout .form_rows{
+.sidebar .workout .form{
     background-color: var(--color-dark-2);
     border-radius: 5px;
+    transition: 0.3s ease;
 }
 
-.sidebar .workout .form_rows .form_activity{
+.sidebar .workout .form .form_activity{
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 400px;
@@ -135,4 +136,8 @@ body{
 
 .running-popup{
     border-left: solid 5px var(--color-brand-2);
+}
+
+.hidden{
+    display: none;
 }
