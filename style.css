@@ -25,7 +25,16 @@ body{
     align-items: center;
     height: 90vh;
     width: 30vw;
-    background-color: var(--color-dark-1);
+    background-color: var(--color-light-2);
+}
+
+.sidebar .header{
+    background-color: var(--color-dark-2);
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
 }
 
 .sidebar .logo{
@@ -40,7 +49,7 @@ body{
 
 .sidebar .logo span{
     font-size: 2.5rem;
-    color: var(--color-light-2);;
+    color: var(--color-light-1);;
 }
 
 .sidebar .workout .form_rows{
@@ -64,7 +73,7 @@ body{
     padding: 10px;
 }
 
-.sidebar .workout .form_activity .input_select{
+.sidebar .workout .form_activity .input_select-type{
     width: 75px;
     border-radius: 5px;
     border: none;
