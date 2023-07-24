@@ -45,7 +45,7 @@ body{
 
 .sidebar .workout .form_rows{
     background-color: var(--color-dark-2);
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .sidebar .workout .form_rows .form_activity{
@@ -75,6 +75,33 @@ body{
     padding-left: 8px;
     border-radius: 5px;
     border: none;
+}
+
+.sidebar .workout .workout_summary{
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: var(--color-dark-2);
+    border-radius: 5px;
+}
+
+.sidebar .workout .workout_running{
+    border-left: solid 5px var(--color-brand-1);
+}
+
+.sidebar .workout .workout_cycling{
+    border-left: solid 5px var(--color-brand-2);
+}
+
+.sidebar .workout .workout_summary .workout_title{
+    color: var(--color-light-2)
+}
+
+.sidebar .workout .workout_summary .workout_details{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.7rem;
+    font-size: 1.1rem;
+    color: var(--color-light-2)
 }
 
 .map{
