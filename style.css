@@ -52,21 +52,17 @@ body{
     color: var(--color-light-1);;
 }
 
-.sidebar .workout .form{
+.sidebar .workouts .form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     background-color: var(--color-dark-2);
+    width: 400px;
     border-radius: 5px;
+    padding: 5px;
     transition: 0.3s ease;
 }
 
-.sidebar .workout .form .form_activity{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 400px;
-    border-radius: 15px;
-    padding: 5px;
-}
-
-.sidebar .workout .form_activity .form_row{
+.sidebar .workouts .form .form_row{
     display: grid;
     grid-template-columns: 1fr 1fr;
     font-size: 1.25rem;
@@ -74,39 +70,39 @@ body{
     padding: 10px;
 }
 
-.sidebar .workout .form_activity .input_select-type{
+.sidebar .workouts .form .input_select-type{
     width: 75px;
     border-radius: 5px;
     border: none;
 }
 
-.sidebar .workout .form_activity .input_text{
+.sidebar .workouts .form .input_text{
     width: 65px;
     padding-left: 8px;
     border-radius: 5px;
     border: none;
 }
 
-.sidebar .workout .workout_summary{
+.sidebar .workouts .workout_summary{
     margin: 1.5rem 0;
     padding: 1rem;
     background-color: var(--color-dark-2);
     border-radius: 5px;
 }
 
-.sidebar .workout .workout_running{
+.sidebar .workouts .workout_running{
     border-left: solid 5px var(--color-brand-1);
 }
 
-.sidebar .workout .workout_cycling{
+.sidebar .workouts .workout_cycling{
     border-left: solid 5px var(--color-brand-2);
 }
 
-.sidebar .workout .workout_summary .workout_title{
+.sidebar .workouts .workout_summary .workout_title{
     color: var(--color-light-2)
 }
 
-.sidebar .workout .workout_summary .workout_details{
+.sidebar .workouts .workout_summary .workout_details{
     display: flex;
     justify-content: space-between;
     margin-top: 1.7rem;
@@ -138,6 +134,10 @@ body{
     border-left: solid 5px var(--color-brand-2);
 }
 
-.hidden{
+.sidebar .workouts .hidden{
+    display: none;
+}
+
+.sidebar .workouts .form .hidden{
     display: none;
 }

@@ -6,7 +6,6 @@ const form = document.querySelector('.form');
 const containerWorkouts = document.querySelector('.workouts');
 const inputType = document.querySelector('.input_select-type');
 const inputDistance = document.querySelector('.input_distance');
-const inputTime = document.querySelector('.input_time');
 const inputCadence = document.querySelector('.input_cadence');
 const inputDuration = document.querySelector('.input_duration');
 const inputElevation = document.querySelector('.input_elevation');
@@ -41,7 +40,7 @@ if(navigator.geolocation){
 
 form.addEventListener('submit', function(e){
     //Dispaly marker
-    inputDistance.value = inputDuration.value = inputCadence.value = '';
+    //inputDistance.value = inputDuration.value = inputCadence.value = '';
     e.preventDefault();
     console.log('form submitted');
     console.log(mapEvent);
@@ -60,7 +59,7 @@ form.addEventListener('submit', function(e){
     .openPopup();
 });
 
-inputType.addEventListener('change', function(e){
+inputType.addEventListener('change', function(){
     inputElevation.closest('.form_row').classList.toggle('hidden');
     inputCadence.closest('.form_row').classList.toggle('hidden');
 })
