@@ -40,7 +40,7 @@ if(navigator.geolocation){
 
 form.addEventListener('submit', function(e){
     //Dispaly marker
-    //inputDistance.value = inputDuration.value = inputCadence.value = '';
+    inputDistance.value = inputDuration.value = inputCadence.value = '';
     e.preventDefault();
     console.log('form submitted');
     console.log(mapEvent);
