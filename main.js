@@ -39,8 +39,9 @@ if(navigator.geolocation){
         });
 };
 
-form.addEventListener('click', function(e){
+form.addEventListener('submit', function(e){
     //Dispaly marker
+    inputDistance.value = inputDuration.value = inputCadence.value = '';
     e.preventDefault();
     console.log('form submitted');
     console.log(mapEvent);
@@ -58,3 +59,8 @@ form.addEventListener('click', function(e){
     .setPopupContent('Workout')
     .openPopup();
 });
+
+inputType.addEventListener('change', function(e){
+    inputElevation.closest('.form_row').classList.toggle('hidden');
+    inputCadence.closest('.form_row').classList.toggle('hidden');
+})
