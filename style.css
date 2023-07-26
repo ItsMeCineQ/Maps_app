@@ -29,7 +29,7 @@ body{
 }
 
 .sidebar .header{
-    background-color: var(--color-dark-2);
+    background-color: var(--color-dark-1);
     width: 100%;
     height: 15%;
     display: flex;
@@ -132,6 +132,10 @@ body{
 
 .running-popup{
     border-left: solid 5px var(--color-brand-2);
+}
+
+.cycling-popup{
+    border-left: solid 5px var(--color-brand-1);
 }
 
 .sidebar .workouts .hidden{
