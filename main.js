@@ -2,6 +2,7 @@
 
 
 const form = document.querySelector('.form');
+const workoutsHTML = document.querySelector('.workouts');
 const containerWorkouts = document.querySelector('.workouts');
 const inputType = document.querySelector('.input_select-type');
 const inputDistance = document.querySelector('.input_distance');
@@ -202,7 +203,7 @@ class App {
             </div>
             </div>
             `
-        form.insertAdjacentHTML('afterend', html);
+        workoutsHTML.insertAdjacentHTML('afterend', html);
     }
 }
 
