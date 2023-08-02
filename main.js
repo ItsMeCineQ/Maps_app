@@ -270,3 +270,11 @@ class App {
 const app = new App();
 
 app._getPosition();
+
+// List of things to do
+// Add edit workout function
+// Add delete workout function
+// Add delete all workouts function
+// Add sorting function
+// Add better looking alert messages
+// Add ability to draw lines instead of just points
