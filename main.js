@@ -22,7 +22,7 @@ class Workout{
     _setDescription(){
         const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-        this.description = `${this.type[0].toUpperCase()} ${this.type.slice[1]} on ${month[this.date.getMonth()]} ${this.date.getDate()}}`;
+        this.description = `${this.type[0].toUpperCase()}${this.type.slice(1)} on ${month[this.date.getMonth()]} ${this.date.getDate()}`;
     }
 }
 
@@ -139,9 +139,8 @@ class App {
         console.log(workout);
         // Render workout on map as marker
         this._renderWorkoutMarker(workout);
-
+        // Render workout on the sidebar
         this._renderWorkout(workout);
-
         inputDistance.value = inputDuration.value = inputCadence.value = '';
 
         form.classList.add('hidden');
@@ -164,7 +163,7 @@ class App {
     _renderWorkout(workout){
         let html = `
             <div class="workout_summary workout_${workout.type}" data-id="${workout.id}">
-            <h2 class="workout_title">${workout.type}</h2>
+            <h2 class="workout_title">${workout.description}</h2>
             <div class="workout_details">
                 <div class="workout_stats">
                     <span class="workout_icon">${workout.type === 'running' ? '🏃🏻' : '🚴🏻'}</span>
