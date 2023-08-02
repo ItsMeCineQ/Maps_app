@@ -96,8 +96,13 @@ class App {
 
     _showForm(mapE){
         this.#mapEvent = mapE;
-            form.classList.remove('hidden');
-            inputDistance.focus();
+        form.classList.remove('hidden');
+        inputDistance.focus();
+    }
+
+    _hideForm(){
+        form.classList.add('hidden');
+        inputDistance.value = inputDuration.value = inputCadence.value = inputElevation.value = '';
     }
 
     _toggleElevationField(){
@@ -141,9 +146,8 @@ class App {
         this._renderWorkoutMarker(workout);
         // Render workout on the sidebar
         this._renderWorkout(workout);
-        inputDistance.value = inputDuration.value = inputCadence.value = '';
-
-        form.classList.add('hidden');
+        // Hide form
+        this._hideForm();
     }
     _renderWorkoutMarker(workout){
         L.marker(workout.coords)
@@ -156,7 +160,7 @@ class App {
                 className: `${workout.type}-popup`,
             })
             )
-            .setPopupContent(`${workout.type}`)
+            .setPopupContent(`${workout.description}`)
             .openPopup();
             }
     
