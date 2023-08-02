@@ -83,26 +83,26 @@ body{
     border: none;
 }
 
-.sidebar .workouts .workout_summary{
+.workout_summary{
     margin: 1.5rem 0;
     padding: 1rem;
     background-color: var(--color-dark-2);
     border-radius: 5px;
 }
 
-.sidebar .workouts .workout_running{
+.workout_running{
     border-left: solid 5px var(--color-brand-1);
 }
 
-.sidebar .workouts .workout_cycling{
+.workout_cycling{
     border-left: solid 5px var(--color-brand-2);
 }
 
-.sidebar .workouts .workout_summary .workout_title{
+.workout_summary .workout_title{
     color: var(--color-light-2)
 }
 
-.sidebar .workouts .workout_summary .workout_details{
+.workout_summary .workout_details{
     display: flex;
     justify-content: space-between;
     margin-top: 1.7rem;

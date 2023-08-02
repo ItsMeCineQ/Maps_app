@@ -140,7 +140,11 @@ class App {
         // Render workout on map as marker
         this._renderWorkoutMarker(workout);
 
+        this._renderWorkout(workout);
+
         inputDistance.value = inputDuration.value = inputCadence.value = '';
+
+        form.classList.add('hidden');
     }
     _renderWorkoutMarker(workout){
         L.marker(workout.coords)
@@ -153,14 +157,14 @@ class App {
                 className: `${workout.type}-popup`,
             })
             )
-            .setPopupContent('workout')
+            .setPopupContent(`${workout.type}`)
             .openPopup();
             }
     
     _renderWorkout(workout){
         let html = `
             <div class="workout_summary workout_${workout.type}" data-id="${workout.id}">
-            <h2 class="workout_title">${workout.description}</h2>
+            <h2 class="workout_title">${workout.type}</h2>
             <div class="workout_details">
                 <div class="workout_stats">
                     <span class="workout_icon">${workout.type === 'running' ? '🏃🏻' : '🚴🏻'}</span>
