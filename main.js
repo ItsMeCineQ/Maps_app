@@ -301,8 +301,10 @@ app._getPosition();
 
 // List of things to do
 // Add edit workout function
-// Add delete workout function
-// Add delete all workouts function
+
+// Add delete workout function - Delete workout from local storage by id
+
+// Add delete all workouts function - done
 // Add sorting function
 // Add better looking alert messages
 // Add ability to draw lines instead of just points
