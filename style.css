@@ -93,6 +93,7 @@ body{
     padding: 1rem;
     background-color: var(--color-dark-2);
     border-radius: 5px;
+    position: relative;
 }
 
 .workout_running{
@@ -113,7 +114,25 @@ body{
     width: 375px;
     margin-top: 1.7rem;
     font-size: 1.1rem;
-    color: var(--color-light-2)
+    color: var(--color-light-2);
+}
+
+.workout_delete{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.workout_delete-all {
+    width: 150px;
+    height: 70px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 #map{

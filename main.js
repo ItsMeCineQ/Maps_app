@@ -8,6 +8,8 @@ const inputDistance = document.querySelector('.input_distance');
 const inputCadence = document.querySelector('.input_cadence');
 const inputDuration = document.querySelector('.input_duration');
 const inputElevation = document.querySelector('.input_elevation');
+const btnRemoveWorkout = document.querySelector('.workout_delete');
+const btnRemoveAllWorkout = document.querySelector('.workout_delete-all');
 
 class Workout{
     date = new Date();
@@ -75,6 +77,8 @@ class App {
         form.addEventListener('submit', this._newWorkout.bind(this));
         inputType.addEventListener('change', this._toggleElevationField);
         containerWorkouts.addEventListener('click', this._moveToPopup.bind(this));
+        btnRemoveAllWorkout.addEventListener('click', this._deleteAllWorkouts);
+        btnRemoveWorkout.addEventListener('click', this._deleteWorkout());
     }
 
     _getPosition(){
@@ -185,6 +189,7 @@ class App {
         let html = `
             <div class="workout_summary workout_${workout.type}" data-id="${workout.id}">
             <h2 class="workout_title">${workout.description}</h2>
+            <button class="workout_delete">❎</button>
             <div class="workout_details">
                 <div class="workout_stats">
                     <span class="workout_icon">${workout.type === 'running' ? '🏃🏻' : '🚴🏻'}</span>
@@ -230,6 +235,15 @@ class App {
         form.insertAdjacentHTML('afterend', html);
     }
 
+    _deleteWorkout(){
+        console.log('click');
+    }
+
+    _deleteAllWorkouts(){
+        localStorage.removeItem('workouts');
+        location.reload();
+    }
+
     _moveToPopup(e){
         const workoutEl = e.target.closest('.workout_summary');
 
@@ -259,11 +273,6 @@ class App {
         this.#workouts.forEach(work => {
             this._renderWorkout(work);
         });
-    }
-
-    reset(){
-        localStorage.removeItem('workouts');
-        location.reload();
     }
 }
 
