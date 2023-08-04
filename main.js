@@ -79,12 +79,10 @@ class App {
         form.addEventListener('submit', this._newWorkout.bind(this));
         inputType.addEventListener('change', this._toggleElevationField);
         containerWorkouts.addEventListener('click', this._moveToPopup.bind(this));
-        btnRemoveAllWorkout.addEventListener('click', function(){
-            document.querySelector('.sidebar').style.filter = 'blur(16px)';
-            document.querySelector('#map').style.filter = 'blur(16px)';
-            modalRemoveAllWorkouts.classList.remove('hidden');
-        });
+        btnRemoveAllWorkout.addEventListener('click', this._showModal);
         btnRemoveWorkout.addEventListener('click', this._deleteWorkout);
+        btnRemoveAllWorkoutsAccept.addEventListener('click', this._deleteAllWorkouts);
+        btnRemoveAllWorkoutsDecline.addEventListener('click', this._hideModal);
     }
 
     _getPosition(){
@@ -251,6 +249,18 @@ class App {
         localStorage.removeItem('workouts');
         location.reload();
         btnRemoveAllWorkout.classList.add('hidden');
+    }
+
+    _showModal(){
+        document.querySelector('.sidebar').style.filter = 'blur(16px)';
+        document.querySelector('#map').style.filter = 'blur(16px)';
+        modalRemoveAllWorkouts.classList.remove('hidden');
+    }
+
+    _hideModal(){
+        document.querySelector('.sidebar').style.filter = 'blur(0px)';
+        document.querySelector('#map').style.filter = 'blur(0px)';
+        modalRemoveAllWorkouts.classList.add('hidden');
     }
 
     _moveToPopup(e){
