@@ -1,6 +1,5 @@
 'use strict'
 
-
 const form = document.querySelector('.form');
 const containerWorkouts = document.querySelector('.workouts');
 const inputType = document.querySelector('.input_select-type');
@@ -11,6 +10,8 @@ const inputElevation = document.querySelector('.input_elevation');
 const btnRemoveWorkout = document.querySelector('.workout_delete');
 const btnRemoveAllWorkout = document.querySelector('.workout_delete-all');
 const modalRemoveAllWorkouts = document.querySelector('.modal_remove-workouts-all')
+const btnRemoveAllWorkoutsAccept = document.querySelector('.remove_workouts-accept');
+const btnRemoveAllWorkoutsDecline = document.querySelector('.remove_workouts-decline');
 
 class Workout{
     date = new Date();
@@ -79,8 +80,9 @@ class App {
         inputType.addEventListener('change', this._toggleElevationField);
         containerWorkouts.addEventListener('click', this._moveToPopup.bind(this));
         btnRemoveAllWorkout.addEventListener('click', function(){
-            
-            if(true) this._deleteAllWorkouts;
+            document.querySelector('.sidebar').style.filter = 'blur(16px)';
+            document.querySelector('#map').style.filter = 'blur(16px)';
+            modalRemoveAllWorkouts.classList.remove('hidden');
         });
         btnRemoveWorkout.addEventListener('click', this._deleteWorkout);
     }
