@@ -242,18 +242,14 @@ class App {
 
     _deleteWorkout(e){
         if(e.target.classList.contains('workout_delete')){
-            console.log('click');
             const workoutEl = e.target.closest('.workout_summary');
 
             if(!workoutEl) return;
-            const workoutId = workoutEl.dataset.id;
-            const workoutIndex = this.#workouts.findIndex(work => work.id === workoutId);
+            const workoutIndex = this.#workouts.findIndex(work => work.id === workoutEl.dataset.id);
             
-            if(workoutIndex !== -1){
-                this.#workouts.splice(workoutIndex, 1);
-                this._setLocalStorage();
-                workoutEl.remove();
-            }
+            this.#workouts.splice(workoutIndex, 1);
+            this._setLocalStorage();
+            workoutEl.remove();
             location.reload();
         };
     }
@@ -315,7 +311,7 @@ app._getPosition();
 // List of things to do
 // Add edit workout function
 
-// Add delete workout function - Delete workout from local storage by id
+// Add delete workout function - Delete workout from local storage by id - done
 
 // Add delete all workouts function - done
 // Add sorting function
