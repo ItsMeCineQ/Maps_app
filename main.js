@@ -79,8 +79,8 @@ class App {
         form.addEventListener('submit', this._newWorkout.bind(this));
         inputType.addEventListener('change', this._toggleElevationField);
         containerWorkouts.addEventListener('click', this._moveToPopup.bind(this));
+        containerWorkouts.addEventListener('click', this._deleteWorkout.bind(this));
         btnRemoveAllWorkout.addEventListener('click', this._showModal);
-        btnRemoveWorkout.addEventListener('click', this._deleteWorkout);
         btnRemoveAllWorkoutsAccept.addEventListener('click', this._deleteAllWorkouts);
         btnRemoveAllWorkoutsDecline.addEventListener('click', this._hideModal);
     }
@@ -241,8 +241,21 @@ class App {
     }
 
     _deleteWorkout(e){
-        e.preventDefault();
-        console.log('click');
+        if(e.target.classList.contains('workout_delete')){
+            console.log('click');
+            const workoutEl = e.target.closest('.workout_summary');
+
+            if(!workoutEl) return;
+            const workoutId = workoutEl.dataset.id;
+            const workoutIndex = this.#workouts.findIndex(work => work.id === workoutId);
+            
+            if(workoutIndex !== -1){
+                this.#workouts.splice(workoutIndex, 1);
+                this._setLocalStorage();
+                workoutEl.remove();
+            }
+            location.reload();
+        };
     }
 
     _deleteAllWorkouts(){
