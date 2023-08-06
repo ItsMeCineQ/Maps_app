@@ -7,6 +7,7 @@ const inputDistance = document.querySelector('.input_distance');
 const inputCadence = document.querySelector('.input_cadence');
 const inputDuration = document.querySelector('.input_duration');
 const inputElevation = document.querySelector('.input_elevation');
+const btnEditWorkout = document.querySelector('.workout_edit');
 const btnRemoveWorkout = document.querySelector('.workout_delete');
 const btnRemoveAllWorkout = document.querySelector('.workout_delete-all');
 const modalRemoveAllWorkouts = document.querySelector('.modal_remove-workouts-all')
@@ -79,6 +80,7 @@ class App {
         form.addEventListener('submit', this._newWorkout.bind(this));
         inputType.addEventListener('change', this._toggleElevationField);
         containerWorkouts.addEventListener('click', this._moveToPopup.bind(this));
+        btnEditWorkout.addEventListener('click', this._editWorkout);
         containerWorkouts.addEventListener('click', this._deleteWorkout.bind(this));
         btnRemoveAllWorkout.addEventListener('click', this._showModal);
         btnRemoveAllWorkoutsAccept.addEventListener('click', this._deleteAllWorkouts);
@@ -239,6 +241,15 @@ class App {
             `
         form.insertAdjacentHTML('afterend', html);
         btnRemoveAllWorkout.classList.remove('hidden');
+    }
+
+    _editWorkout(e){
+        console.log('click');
+        // if(e.target.classList.contains('workout_edit')){
+        //     const workoutEl = e.target.closest('.workout_summary');
+        //     if(!workoutEl) return;
+        //     const workoutIndex = this.#workouts.findIndex(work => work.id === workoutEl.dataset.id);
+        // }
     }
 
     _deleteWorkout(e){
