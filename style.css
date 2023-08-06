@@ -146,6 +146,17 @@ body{
     transform: rotateZ(45deg);
 }
 
+.workout_edit{
+    height: 30px;
+    width: 50px;
+    font-size: 1.3rem;
+    background-color: var(--color-light-2);
+    color: var(--color-dark-2);
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
 #map{
     width: 66vw;
     background-color: #42484d;

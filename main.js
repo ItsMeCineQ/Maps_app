@@ -193,6 +193,7 @@ class App {
         let html = `
             <div class="workout_summary workout_${workout.type}" data-id="${workout.id}">
             <h2 class="workout_title">${workout.description}</h2>
+            <button class="workout_edit">Edit</button>
             <button class="workout_delete">❎</button>
             <div class="workout_details">
                 <div class="workout_stats">
